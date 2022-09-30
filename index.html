@@ -5,22 +5,11 @@ title: Home
 <header>
     <h1>{{ title }} </h1>
 </header>
-<body>
-    <h1>Pictures!</h1>
+    <h2>Health & Fitness: Make healthy choices!</h2>
+        
+    {% for photos in photos.0didn7v.media %}
+    <img src="{{ photos.src.tiny }}" alt="{{ photos.alt }}" title="{{ photos.alt }}">
+    
+    <!-- Pull data from images: <p>{{ photos.photographer }}</p> -->
+    {% endfor -%}
 
-<ol>
-  {%- for photos in photos.0didn7v.media %}
-  <li>
-    <img src="{{ photos.src.tiny }}" alt="{{ photos.alt }}">
-</li>
-  {% endfor -%}
-</ol>
-</body>
-<footer>
-    <hr>
-    <p>
-        <small>
-            <a href="https://www.pexels.com/%22%3E">Photos provided by Pexels</a>
-        </small>
-    </p>
-</footer>
