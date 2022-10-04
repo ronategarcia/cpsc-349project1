@@ -1,0 +1,25 @@
+---
+layout: base
+title: Photo Paged
+pagination:
+    data: photos.0didn7v.media
+    size: 1
+---
+
+<!-- Individual page urls for each photot:
+    http://localhost:8080/photopaged/  
+    http://localhost:8080/photopaged/1
+    ....    
+-->
+
+<h1>{{ title }}</h1>
+<ul>
+    <!-- &nbsp means non-breaking space, it is a referenced standard space-->
+    {% for photo in pagination.items -%}
+    <br>
+    <caption>Caption: &nbsp; <strong>{{ photo.alt }}</strong></caption>
+    <p> Photographer: &nbsp; <strong>{{ photo.photographer }}</strong></p> 
+    <p> Photographer URL: &nbsp; <strong>{{ photo.photographer_url }}</strong></p> 
+    <img src="{{ photo.src.large }}" title="{{ photo.alt }}" alt="{{ photo.alt }}">
+    {% endfor -%}
+</ul>
