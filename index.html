@@ -8,7 +8,9 @@ title: Home
     <h2>Health & Fitness Photo Collection</h2>
         
     {% for photos in photos.0didn7v.media %}
-    <img src="{{ photos.src.tiny }}" alt="{{ photos.alt }}" title="{{ photos.alt }}">
+    <a href="photopaged">
+        <img src="{{ photos.src.tiny }}" alt="{{ photos.alt }}" title="{{ photos.alt }}">
+    </a>
     
     <!-- Pull data from images: <p>{{ photos.photographer }}</p> -->
     {% endfor -%}
