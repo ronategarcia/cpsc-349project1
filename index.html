@@ -7,10 +7,20 @@ title: Home
 </header>
     <h2>Health & Fitness Photo Collection</h2>
         
+    {% assign counter = 0 %}
     {% for photos in photos.0didn7v.media %}
-    <a href="photopaged">
+    {% if counter == 0 %}
+    <a href="photopaged/">
         <img src="{{ photos.src.tiny }}" alt="{{ photos.alt }}" title="{{ photos.alt }}">
     </a>
+    {% else %}
+    <a href="photopaged/{{ counter }}">
+        <img src="{{ photos.src.tiny }}" alt="{{ photos.alt }}" title="{{ photos.alt }}">
+    </a>
+    {% endif %}
+    {% assign counter = counter | plus :1 %}
+    
+    
     
     <!-- Pull data from images: <p>{{ photos.photographer }}</p> -->
     {% endfor -%}
