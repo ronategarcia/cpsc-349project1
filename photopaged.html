@@ -16,12 +16,12 @@ pagination:
     <ul>
         <!-- &nbsp means non-breaking space, it is a referenced standard space-->
         {% for photo in pagination.items -%}
-            <body style="background-color: {{photo.avg_color}};">
+            <li style="background-color: {{photo.avg_color}};">
                 <br>
-                <caption>Caption: &nbsp; <strong>{{ photo.alt }}</strong></caption>
+                <p>Caption: &nbsp; <strong>{{ photo.alt }}</strong></p>
                 <p> Photographer: &nbsp; <strong>{{ photo.photographer }}</strong></p> 
                 <p> Photographer URL: &nbsp; <strong>{{ photo.photographer_url }}</strong></p> 
                 <img src="{{ photo.src.large }}" title="{{ photo.alt }}" alt="{{ photo.alt }}">
-            </body>
+            </li>
         {% endfor -%}
     </ul>
